@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2019-01-05T09:14:04+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-06T15:10:27+01:00
+ * @Last modified time: 2019-01-06T17:38:32+01:00
  */
 
 import React, { Component } from "react";
@@ -82,6 +82,17 @@ class App extends Component {
       todos
     });
   }
+  componentDidMount = () => {
+    let data = localStorage.getItem("mytodos");
+    if (data) {
+      let todos = JSON.parse(data);
+      this.setState({ todos });
+    }
+  };
+  componentDidUpdate = () => {
+    let data = JSON.stringify(this.state.todos);
+    localStorage.setItem("mytodos", data);
+  };
   render() {
     return (
       <div className="App">
