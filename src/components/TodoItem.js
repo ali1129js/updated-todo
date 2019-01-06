@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2019-01-05T09:25:48+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-06T15:07:40+01:00
+ * @Last modified time: 2019-01-06T16:04:29+01:00
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -15,7 +15,8 @@ class TodoItem extends Component {
         style={{
           textDecoration: completed ? "line-through" : "none",
           backgroundColor: color,
-          padding: "10px"
+          padding: "10px",
+          fontSize: "20px"
         }}
       >
         <p>
