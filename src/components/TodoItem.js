@@ -2,25 +2,32 @@
  * @Author: Ali
  * @Date:   2019-01-05T09:25:48+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-05T19:50:21+01:00
+ * @Last modified time: 2019-01-06T12:43:11+01:00
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 class TodoItem extends Component {
-  getStyle = () => {
-    return {
-      background: "#f4f4f4",
-      padding: "10px",
-      borderBottom: "1px #ccc dotted",
-      textDecoration: this.props.todo.completed ? "line-through" : "none"
-    };
-  };
+  // getStyle = color => {
+  //   return {
+  //     background: color,
+  //     padding: "10px",
+  //     borderBottom: "1px #ccc dotted",
+  //     textDecoration: this.props.todo.completed ? "line-through" : "none"
+  //   };
+  // };
 
   render() {
-    const { id, title } = this.props.todo;
+    const { id, title, color } = this.props.todo;
+    console.log(color);
     return (
-      <div style={this.getStyle()}>
+      <div
+        style={{
+          textDecoration: this.props.todo.completed ? "line-through" : "none",
+          backgroundColor: color,
+          padding: "10px"
+        }}
+      >
         <p>
           <input
             type="checkbox"
