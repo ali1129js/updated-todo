@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2019-01-05T09:16:28+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-05T19:48:12+01:00
+ * @Last modified time: 2019-01-06T14:09:29+01:00
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -21,6 +21,8 @@ class Todos extends Component {
   }
 }
 Todos.propTypes = {
-  todos: PropTypes.array.isRequired
+  todos: PropTypes.array.isRequired,
+  delTodo: PropTypes.func.isRequired,
+  markComplete: PropTypes.func.isRequired
 };
 export default Todos;

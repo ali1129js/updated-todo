@@ -2,28 +2,18 @@
  * @Author: Ali
  * @Date:   2019-01-05T09:25:48+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-06T12:43:11+01:00
+ * @Last modified time: 2019-01-06T15:07:40+01:00
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 class TodoItem extends Component {
-  // getStyle = color => {
-  //   return {
-  //     background: color,
-  //     padding: "10px",
-  //     borderBottom: "1px #ccc dotted",
-  //     textDecoration: this.props.todo.completed ? "line-through" : "none"
-  //   };
-  // };
-
   render() {
-    const { id, title, color } = this.props.todo;
-    console.log(color);
+    const { id, title, color, completed } = this.props.todo;
     return (
       <div
         style={{
-          textDecoration: this.props.todo.completed ? "line-through" : "none",
+          textDecoration: completed ? "line-through" : "none",
           backgroundColor: color,
           padding: "10px"
         }}
@@ -32,6 +22,7 @@ class TodoItem extends Component {
           <input
             type="checkbox"
             onChange={this.props.markComplete.bind(this, id)}
+            checked={completed}
           />
           {"  "}
           {title}

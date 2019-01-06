@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2019-01-06T10:08:49+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-06T12:05:18+01:00
+ * @Last modified time: 2019-01-06T15:45:17+01:00
  */
 import React, { Component } from "react";
 
@@ -20,13 +20,15 @@ class AddTodo extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
+          className="input"
           type="text"
           name="title"
           placeholder="Create new Todo ..."
           value={this.state.title}
           onChange={this.handleChange}
+          required
         />
-        <button> Add </button>
+        <button className="addButton"> Add to List </button>
       </form>
     );
   }
